@@ -25,7 +25,6 @@ public class BookServiceImp implements BookService {
     private final AuthorRepository authorRepository;
 
     @Override
-    @Transactional
     public Book createBook(BookRequestDto bookRequestDto) {
         return bookRepository.save(new Book(bookRequestDto.getName(), bookRequestDto.getIsbn(),
                 bookRequestDto.getYear(), bookRequestDto.getAuthors()));
